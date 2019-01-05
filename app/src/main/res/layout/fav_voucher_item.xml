@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/voucher_item_ID"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:layoutDirection="ltr">
+
+    <!--voucher card-->
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        app:cardElevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <!--voucher image-->
+            <ImageView
+                android:id="@+id/voucher_image_id"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                android:transitionName="vImage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/a1" />
+            <!--end -->
+
+            <!--voucher title-->
+            <TextView
+                android:id="@+id/voucher_title_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:padding="4dp"
+                android:text="Break Fast sandwich"
+                android:textColor="@color/title_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:transitionName="vTitle"
+                app:layout_constraintBottom_toTopOf="@+id/voucher_desc_id"
+                app:layout_constraintEnd_toStartOf="@+id/voucher_quantity_id"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/voucher_image_id"
+                app:layout_constraintVertical_bias="0.0" />
+            <!--end-->
+
+            <!--voucher desc-->
+            <TextView
+                android:id="@+id/voucher_desc_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:ellipsize="end"
+                android:maxLength="50"
+                android:maxLines="1"
+                android:padding="4dp"
+                android:text="a morning break fast special for your desire "
+                android:textColor="@color/desc_color"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                android:transitionName="vDesc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/voucher_title_id" />
+
+            <!--branch-->
+            <TextView
+                android:id="@+id/branch_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="253dp"
+                android:background="@drawable/branch_capsol_shape"
+                android:ellipsize="end"
+                android:maxLength="30"
+                android:maxLines="1"
+                android:padding="4dp"
+                android:text="branch"
+                android:textColor="@color/master_orange"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:transitionName="vBranch"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/voucher_desc_id" />
+            <!--end-->
+
+            <!--discount-->
+            <TextView
+                android:id="@+id/voucher_discount_id"
+                android:layout_width="53dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/discount"
+                android:elevation="15dp"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="70% OFF"
+                android:textColor="@color/theme_primary"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:transitionName="vDiscount"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/branch_id"
+                app:layout_constraintTop_toBottomOf="@+id/voucher_desc_id" />
+            <!--end-->
+
+            <!--view voucher , voucher price view-->
+            <RelativeLayout
+                android:id="@+id/relativeLayout2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/voucher_footer"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/voucher_discount_id">
+
+                <TextView
+                    android:id="@+id/voucher_view_id"
+                    android:layout_width="48dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="144dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="19dp"
+                    android:layout_toEndOf="@+id/voucher_price_detail_id"
+                    android:background="@drawable/branch_capsol_shape"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:text="View"
+                    android:textColor="@color/title_color"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/voucher_new_price_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_toEndOf="@+id/old_price_detail_id"
+                    android:gravity="center"
+                    android:paddingStart="18dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="39"
+                    android:textColor="@color/theme_primary"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:transitionName="vNewPrice"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/voucher_view_id"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/old_price_detail_id" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/voucher_quantity_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="TextView"
+                android:textColor="@color/voucher_button_color"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:transitionName="vQuantity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/voucher_image_id" />
+            <!--end-->
+
+            <!--rating bar-->
+            <!--end-->
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</android.support.constraint.ConstraintLayout>
+
+

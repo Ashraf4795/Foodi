@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:orientation="vertical">
+
+    <!--news Image-->
+    <ImageView
+        android:id="@+id/news_image_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/a1" />
+    <!--end news Image-->
+
+    <!--news title-->
+    <TextView
+        style="@style/news_title_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/news_title_id"
+        android:text="News today are so important so lets get start and dive in the news" />
+    <!--end news title-->
+
+
+    <!--news content-->
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="18dp"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarSize="1dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/news_content_id"
+        android:text="@string/dumDescString"/>
+    </ScrollView>
+    <!--end news content-->
+
+
+
+    <!--linear layout for buttons-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/news_Horizontal_layout"
+        android:orientation="horizontal"
+        android:layoutDirection="rtl">
+
+        <!--like icon-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/news_like_icon_id"
+            app:srcCompat="@drawable/like_icon"
+            android:padding="18dp"/>
+        <!--end like icon-->
+
+        <!--share icon-->
+        <ImageButton
+            android:id="@+id/news_share_icon_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="18dp"
+            android:background="#fafafa"
+            app:srcCompat="@drawable/share_icon"
+            android:layoutDirection="ltr"/>
+        <!--end share icon-->
+
+        <!--mark icon-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/news_mark_icon_id"
+            app:srcCompat="@drawable/mark_icon"
+            android:padding="18dp"/>
+        <!--end mark icon-->
+    </LinearLayout>
+
+</LinearLayout>

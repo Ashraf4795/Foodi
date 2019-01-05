@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr"
+    tools:context=".Activites.voucher_detail">
+
+    <ImageView
+        android:id="@+id/voucher_image_detail_id"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:transitionName="vImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/a1" />
+
+    <TextView
+        android:id="@+id/voucher_title_detail_id"
+        style="@style/voucher_title_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="title"
+        android:transitionName="vTitle"
+        app:layout_constraintEnd_toStartOf="@+id/voucher_qty_detail_id"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/voucher_image_detail_id"
+        app:layout_constraintTop_toBottomOf="@+id/voucher_image_detail_id" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/simpleRatingBar_detail_id">
+
+        <TextView
+            android:id="@+id/voucher_desc_detail_id"
+            style="@style/voucher_description_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:text="asdf sdfasdlkj asdlkfjasdf laksdjf dslkfjsdo adlkfjds alksdfadsf lakdsflk adsflksd"
+            android:transitionName="vDesc"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/voucher_title_detail_id"
+            app:layout_constraintVertical_bias="0.037" />
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/float_qr_code_button_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:clickable="true"
+        app:backgroundTint="#fff"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/relativeLayout2"
+        app:srcCompat="@drawable/qr2" />
+
+    <TextView
+        android:id="@+id/voucher_qty_detail_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:text="TextView"
+        android:transitionName="vQuantity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/voucher_image_detail_id" />
+
+    <com.willy.ratingbar.ScaleRatingBar
+        android:id="@+id/simpleRatingBar_detail_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:transitionName="vRatingBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/branch_id"
+        app:srb_clearRatingEnabled="true"
+        app:srb_clickable="true"
+        app:srb_drawableEmpty="@drawable/star_empty"
+        app:srb_drawableFilled="@drawable/star_filled"
+        app:srb_isIndicator="false"
+        app:srb_minimumStars="0"
+        app:srb_numStars="5"
+        app:srb_rating="2"
+        app:srb_scrollable="true"
+        app:srb_starHeight="20dp"
+        app:srb_starPadding="4dp"
+        app:srb_starWidth="20dp"
+        app:srb_stepSize="1" />
+
+    <TextView
+        android:id="@+id/branch_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/branch_capsol_shape"
+        android:ellipsize="end"
+        android:maxLength="30"
+        android:maxLines="1"
+        android:padding="4dp"
+        android:text="branch"
+        android:textColor="@color/master_orange"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:transitionName="vBranch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/voucher_title_detail_id" />
+
+    <!--discount-->
+    <TextView
+        android:id="@+id/voucher_discount_id"
+        android:layout_width="53dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/discount"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="70% OFF"
+        android:textColor="@color/theme_primary"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:transitionName="vDiscount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/simpleRatingBar_detail_id"
+        app:layout_constraintTop_toBottomOf="@+id/voucher_qty_detail_id" />
+    <!--end-->
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/voucher_footer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/old_price_detail_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="left"
+            android:paddingStart="8dp"
+            android:paddingTop="8dp"
+            android:text="125"
+            android:textColor="@color/theme_primary"
+            android:textStyle="normal"
+            android:transitionName="vOldPrice"
+            app:layout_constraintBaseline_toBaselineOf="@+id/voucher_price_detail_id"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/voucher_new_price_detail_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/old_price_detail_id"
+            android:gravity="center"
+            android:paddingStart="8dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="39"
+            android:textColor="@color/theme_primary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:transitionName="vNewPrice"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/voucher_view_id"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/old_price_detail_id" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

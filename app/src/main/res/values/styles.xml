@@ -1,0 +1,163 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/tab_bar_color</item>
+        <item name="colorPrimaryDark">@color/tab_bar_color</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        //transition item
+        <item name="android:windowActivityTransitions">true</item>
+    </style>
+
+    <!--no Action bar style-->
+    <style name="noActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimaryDark">@color/theme_primary</item>
+        >
+    </style>
+
+    <!--custom style-->
+
+    <!--voucher title style-->
+    <style name="voucher_title_style" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/title_color</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:maxLength">30</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    <!--end voucher title style-->
+
+    <!--voucher description style-->
+    <style name="voucher_description_style" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/desc_color</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:lines">4</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+    <!--end voucher description style-->
+
+    <!--fragment style-->
+    <style name="homeStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/master_blue</item>
+        <item name="colorPrimaryDark">@color/master_blue</item>
+    </style>
+    <!--end home fragment style-->
+
+    <!--news style-->
+    <style name="news_title_style" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/title_color</item>
+        <item name="android:textSize">34sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:maxLength">50</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+    <!--end news style-->
+
+    <style name="text_style" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/desc_color</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!--login styel-->
+    <style name="loginStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimaryDark">@color/master_red</item>
+        <item name="colorPrimary">@color/master_red</item>
+    </style>
+    <!--signup styel-->
+    <style name="signup" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimaryDark">@color/master_red</item>
+        <item name="colorPrimary">@color/master_red</item>
+    </style>
+
+    <!--detailScreen styel-->
+    <style name="detailScreenStyle" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimaryDark">@color/master_blue</item>
+        <item name="colorPrimary">@color/master_blue</item>
+    </style>
+
+    <style name="signup_entry_style" parent="Theme.AppCompat">
+
+    </style>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="scannerStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="baseStyle" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/master_blue</item>
+        <item name="colorPrimaryDark">@color/master_blue</item>
+        //transition item
+        <item name="android:windowActivityTransitions">true</item>
+    </style>
+
+    <!--stores no Action bar style-->
+    <style name="storeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimaryDark">@color/master_blue</item>
+    </style>
+
+    <!--search view styel-->
+    <style name="MaterialSearchViewStyle">
+        <!-- Background for the search bar -->
+        <item name="searchBackground">@color/theme_primary</item>
+
+        <!-- Change voice icon -->
+        <item name="searchVoiceIcon">@drawable/ic_action_voice_search_inverted</item>
+
+        <!-- Change clear text icon -->
+        <item name="searchCloseIcon">@drawable/close_icon</item>
+
+        <!-- Change up icon -->
+        <item name="searchBackIcon">@drawable/back</item>
+
+        <!-- Change icon for the suggestions -->
+        <item name="searchSuggestionIcon">@drawable/ic_suggestion</item>
+
+        <!-- Change background for the suggestions list view -->
+        <item name="searchSuggestionBackground">@android:color/white</item>
+
+        <!-- Change text color for edit text. This will also be the color of the cursor -->
+        <item name="android:textColor">@color/theme_primary_text_inverted</item>
+
+        <!-- Change hint text color for edit text -->
+        <item name="android:textColorHint">@color/material_drawer_hint_text</item>
+
+        <!-- Hint for edit text -->
+        <item name="android:hint">@string/search_hint</item>
+    </style>
+</resources>

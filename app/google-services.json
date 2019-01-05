@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "573974808638",
+    "firebase_url": "https://voucher-a9eb9.firebaseio.com",
+    "project_id": "voucher-a9eb9",
+    "storage_bucket": "voucher-a9eb9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573974808638:android:2d3beace32f6e62f",
+        "android_client_info": {
+          "package_name": "com.city.coding.restaurant3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "573974808638-5djgbq0vrd00mcfbb7767ubjr2so498e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.city.coding.restaurant3",
+            "certificate_hash": "a3cac3b05e108d63737a6a5d06b11a16452380f6"
+          }
+        },
+        {
+          "client_id": "573974808638-mj4308sqtcei5ddr28j7nnagegivvpqg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrafaDwHqetCvQ43cS4pUrDpYdJZN2sRc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "573974808638-mj4308sqtcei5ddr28j7nnagegivvpqg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

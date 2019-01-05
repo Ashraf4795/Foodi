@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+
+    <!--custom color-->
+
+    <!--home search color-->
+    <color name="search_box_color">#f73ba7b1</color>
+    <color name="tab_bar_color">#006A7A</color>
+    <color name="tab_text_color">#4fcdec</color>
+    <color name="tab_indicator">#fff</color>
+    <color name="search_icon_color">#468f8e</color>
+    <!--end-->
+
+    <!--voucher item color-->
+    <color name="title_color">#666464</color>
+    <color name="desc_color">#b1b1b1</color>
+    <color name="price_color">#504e4e</color>
+    <color name="price_unit_color">#fdd835</color>
+    <color name="voucher_item_color">#ffffff</color>
+    <color name="voucher_list_background_color">#e0f2f1</color>
+    <!--end-->
+
+    <!--master color set-->
+    <color name="master_red">#FFCD3642</color>
+    <color name="master_red_with_opacity">#b5d73845</color>
+    <color name="master_blue">#FF3BAAC5</color>
+    <color name="master_green">#FF6FA945</color>
+    <color name="master_yellow">#FFF1A72B</color>
+    <color name="master_orange">#FFEA7D4A</color>
+    <!--end-->
+
+    <!--search view colors-->
+    <color name="theme_primary">#fff</color>
+    <color name="theme_primary_text_inverted">#696868</color>
+    <color name="theme_secondary_text_inverted">#cccccc</color>
+
+    <!--divider color-->
+    <color name="divider_color">#dedbdb</color>
+
+    <!--favorite icon colors-->
+    <color name="fav_selected_color">#FFD700</color>
+    <color name="voucher_button_color">#353237</color>
+    <color name="hintColor">#f2c8cc</color>
+    <color name="master_green_obacity">#dc6fa945</color>
+    <color name="black_obacity">#9c363636</color>
+    <color name="black_obacity2">#8d6e6c6c</color>
+    <color name="black_obacity3">#8da7a4a4</color>
+    <color name="black_overlay">#66000000</color>
+
+    <!--hint color-->
+    <color name="login_hint_color">#ff9c9c</color>
+</resources>

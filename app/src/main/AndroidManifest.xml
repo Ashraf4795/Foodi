@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.city.coding.restaurant3">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="false"
+        android:theme="@style/AppTheme"
+        tools:replace="android:supportsRtl">
+        <activity
+            android:name=".Activites.splash"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/noActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activites.voucher_detail"
+            android:screenOrientation="portrait"
+            android:theme="@style/detailScreenStyle" />
+        <activity
+            android:name=".Activites.login"
+            android:label="@string/login"
+            android:screenOrientation="portrait"
+            android:theme="@style/loginStyle" />
+        <activity
+            android:name=".Activites.signUp_entry"
+            android:label="@string/signUp"
+            android:theme="@style/signup"
+            android:parentActivityName=".Activites.splash"/>
+        <activity
+            android:name=".Activites.homeActivity"
+            android:label="@string/home"
+            android:theme="@style/homeStyle" />
+        <activity
+            android:name=".Activites.scannerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/scannerStyle" />
+
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="barcode" />
+
+        <activity
+            android:name=".Activites.favActivity"
+            android:label="@string/fav"
+            android:theme="@style/baseStyle" />
+        <activity
+            android:name=".Activites.user_profile"
+            android:label="@string/myProfile"
+            android:theme="@style/homeStyle" />
+        <activity
+            android:name=".Activites.term_condition"
+            android:label="@string/term_condition"
+            android:theme="@style/baseStyle" />
+        <activity
+            android:name=".Activites.storesActivity"
+            android:label="@string/stores"
+            android:theme="@style/storeNoActionBar" />
+        <activity
+            android:name=".Activites.reward"
+            android:label="@string/rewards"
+            android:theme="@style/baseStyle" />
+        <activity
+            android:name=".Activites.news"
+            android:label="@string/latestNews"
+            android:theme="@style/baseStyle" />
+        <activity
+            android:name=".Activites.qrActivity"
+            android:theme="@style/homeStyle" />
+        <activity
+            android:name=".Activites.registerCompletionActivity"
+            android:label="@string/completeSignUp"
+            android:theme="@style/signup" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".Activites.MapsActivity"></activity>
+    </application>
+
+</manifest>

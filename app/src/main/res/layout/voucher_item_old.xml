@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/voucher_item_ID"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:layout_marginBottom="4dp"
+    android:background="@color/voucher_item_color">
+    <!--voucher image with 72dp x 72dp size-->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/voucher_image"
+        android:layout_width="72dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:padding="8dp"
+        android:src="@mipmap/ic_launcher" />
+    <!--end voucher image-->
+
+    <!--voucher title , max char = 30 ,max line = 1 for design purpose-->
+    <TextView
+        android:id="@+id/voucher_title"
+        style="@style/voucher_title_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="200dp"
+        android:layout_toEndOf="@+id/voucher_image"
+        android:text="Sweetbreads" />
+    <!--end voucher title view-->
+
+    <!--voucher description max char =55 , max Line = 2 ,-->
+    <TextView
+        android:id="@+id/voucher_desc"
+        style="@style/voucher_description_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/voucher_image"
+        android:text="@string/dumDescString" />
+    <!--end voucher description view-->
+
+    <!--voucher price-->
+    <TextView
+        android:id="@+id/voucher_price_detail_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="33dp"
+        android:text="200"
+        android:textColor="#000"
+        android:textSize="18sp" />
+    <!--end price-->
+
+    <!--divider view-->
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/listDivider" />
+
+    <!--end divider view-->
+
+    <!--favorite icon-->
+    <ImageView
+        android:id="@+id/fav_icon_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="8dp"
+
+        app:srcCompat="@drawable/fav_icon" />
+    <!--end favorite icon -->
+
+</RelativeLayout>
+
+

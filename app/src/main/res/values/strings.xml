@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">Voucher</string>
+
+    <!--custom string-->
+    <!--Home-->
+    <string name="tab_home">Home</string>
+    <!--Favorite-->
+    <string name="tab_fav">Favorite</string>
+    <!--news-->
+    <string name="tab_news">News</string>
+
+    <!--end login string section-->
+    <string name="dumDescString">The link you are referring to seems to work with strings generated at runtime. The strings from strings.xml are not created at runtime. You can get them via</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login2">Sign in</string>
+
+    <!--tabBar section-->
+    <string name="home">Home</string>
+    <string name="fav">Favorite </string>
+    <string name="news">news</string>
+    <string name="setting">setting</string>
+    <string name="search">search</string>
+    <string name="searchDialogHint">Search...</string>
+    <!--end tabBar section-->
+
+
+    <string name="splash_screen_cd">Splash screen logo</string>
+    <string name="title_activity_home">homeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="viewItem">view item</string>
+    <string name="spalsh_welcome_button">Next</string>
+    <string name="welcome_message">Welcom \nreach the best voucher \nin one place</string>
+    <string name="left">  Left</string>
+    <string name="QRdone">done</string>
+
+    <string name="signUp">Sign Up</string>
+    <string name="login">Log in</string>
+    <string name="lottie_message">All you need, in one place</string>
+
+    <string name="firstnameHint">first name</string>
+    <string name="lastnameHint">last name</string>
+    <string name="emailHint">\@gmail.com</string>
+    <string name="phoneHint">Phone</string>
+    <string name="dateHint">your birth date</string>
+    <string name="signIn">Sign In</string>
+    <string name="scan">scan</string>
+
+    <string name="title_activity_scanner">scannerActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="password">Password</string>
+    <string name="title_activity_home2">homeActivity2</string>
+
+
+    <!--drawer strings-->
+    <string name="drawerHome">Home</string>
+    <string name="myVoucher">My Vouchers</string>
+    <string name="rewards">Rewards</string>
+    <string name="latestNews">Latest news</string>
+    <string name="stores">Stores</string>
+    <string name="TC">T&amp;C</string>
+    <string name="myProfile">My Profile</string>
+
+
+    <!--error message for login or regist-->
+    <string name="empty_password">empty password , Enter your Password Please</string>
+    <string name="empty_email">empty Email, Enter your Email Please</string>
+    <string name="wrong_input">Invalid Password or Email, Check your information and try again.</string>
+    <string name="short_password">password must to be longer than 6 character</string>
+    <string name="invalid_password">password must to be longer than 6 character</string>
+    <string name="login_with_facebook">facebook</string>
+    <string name="term_condition">Terms</string>
+    <string name="date_of_birth">date of birth</string>
+    <string name="logout">Sign out</string>
+    <string name="error_message">Wrong input ,check your email and password</string>
+    <string name="title_activity_t">tActivity</string>
+    <string name="completeSignUp">One more step</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="short_name">first and last name must be more than 3 character</string>
+    <string name="wrong_phone_number">make sure that you enter your phone number correctly</string>
+    <string name="wrong_email">wrong Email</string>
+    <string name="date_not_defined">select your date of birth</string>
+
+
+</resources>
