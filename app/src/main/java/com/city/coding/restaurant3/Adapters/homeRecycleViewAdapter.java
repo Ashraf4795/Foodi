@@ -13,6 +13,7 @@ import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -86,20 +87,7 @@ public class homeRecycleViewAdapter extends RecyclerView.Adapter<homeRecycleView
         v.desc.setText("a morning breakFast spicially for you ...");
         v.newPrice.setText(voucher.getValue().toString());
         v.quantity.setText(voucher.getQty() + " Left");
-        v.view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // pairs = new Pair[9] ;
-                Intent intent = new Intent(mContext, voucher_detail.class);
-                intent.putExtra("voucher_image", voucher.getVoucherImage());
-                intent.putExtra("voucher_title", voucher.getTitle());
-                intent.putExtra("voucher_qty", voucher.getQty());
-                intent.putExtra("voucher_value", voucher.getValue());
-                intent.putExtra("voucher_id", voucher.getVoucherId());
-                //ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(activity ,pairs);
-                mContext.startActivity(intent);
-            }
-        });
+
         v.rate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,6 +106,22 @@ public class homeRecycleViewAdapter extends RecyclerView.Adapter<homeRecycleView
             public void unLiked(LikeButton likeButton) {
                 Toast.makeText(mContext, voucherData.get(position).getTitle() + " removed from Favorite", Toast.LENGTH_LONG).show();
 
+            }
+        });
+
+        //set frame click listener to be able to view voucher from any where clicked on the view
+        v.frameLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // pairs = new Pair[9] ;
+                Intent intent = new Intent(mContext, voucher_detail.class);
+                intent.putExtra("voucher_image", voucher.getVoucherImage());
+                intent.putExtra("voucher_title", voucher.getTitle());
+                intent.putExtra("voucher_qty", voucher.getQty());
+                intent.putExtra("voucher_value", voucher.getValue());
+                intent.putExtra("voucher_id", voucher.getVoucherId());
+                //ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(activity ,pairs);
+                mContext.startActivity(intent);
             }
         });
 
@@ -143,10 +147,11 @@ public class homeRecycleViewAdapter extends RecyclerView.Adapter<homeRecycleView
         //set id's for voucher item fields
         ImageView voucherImage;
         TextView title, desc, newPrice, quantity;
-        TextView view, branch, discount;
+        TextView  branch, discount;
         ScaleRatingBar rate;
         LikeButton star;
         ProgressBar progressBar;
+        FrameLayout frameLayout ;
 
         // ConstraintLayout itemLayout;
         //end
@@ -162,11 +167,10 @@ public class homeRecycleViewAdapter extends RecyclerView.Adapter<homeRecycleView
             newPrice = itemView.findViewById(R.id.voucher_new_price_id);
             branch = itemView.findViewById(R.id.branch_id);
             quantity = itemView.findViewById(R.id.voucher_quantity_id);
-            view = itemView.findViewById(R.id.voucher_view_id);
             rate = itemView.findViewById(R.id.simpleRatingBar_id);
             star = itemView.findViewById(R.id.star_button);
             progressBar = itemView.findViewById(R.id.item_progress_bar_id);
-
+            frameLayout = itemView.findViewById(R.id.item_frame_id);
              /*
             pairs[0] = new Pair<View,String>(voucherImage,"vImage");
             pairs[1] = new Pair<View,String>(discount,"vDiscount");

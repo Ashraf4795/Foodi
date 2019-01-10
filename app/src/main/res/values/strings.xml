@@ -85,6 +85,7 @@
     <string name="wrong_phone_number">make sure that you enter your phone number correctly</string>
     <string name="wrong_email">wrong Email</string>
     <string name="date_not_defined">select your date of birth</string>
+    <string name="owner_check_box">Owner </string>
 
 
 </resources>

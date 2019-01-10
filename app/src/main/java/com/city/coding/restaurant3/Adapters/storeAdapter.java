@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,10 +41,12 @@ public class storeAdapter extends RecyclerView.Adapter<storeAdapter.sViewHolder>
         final store s = storeList.get(position);
         holder.storeName.setText(s.getStore_name());
         holder.storeAddress.setText(s.getStore_address());
-        holder.location.setOnClickListener(new View.OnClickListener() {
+
+
+        //frame click listener
+        holder.frameLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(mContext, MapsActivity.class);
                 intent.putExtra("lati", s.getLati());
                 intent.putExtra("longi", s.getLongi());
@@ -66,13 +69,14 @@ public class storeAdapter extends RecyclerView.Adapter<storeAdapter.sViewHolder>
     public class sViewHolder extends RecyclerView.ViewHolder {
         TextView storeName, storeAddress;
         ImageView location;
+        FrameLayout frameLayout ;
 
         public sViewHolder(View itemView) {
             super(itemView);
             storeName = itemView.findViewById(R.id.store_name_id);
             storeAddress = itemView.findViewById(R.id.store_add_id);
             location = itemView.findViewById(R.id.location_id);
-
+            frameLayout = itemView.findViewById(R.id.store_item_frame_id);
         }
     }
 

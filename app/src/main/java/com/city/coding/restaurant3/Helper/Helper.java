@@ -185,4 +185,9 @@ public class Helper {
         // Adding request to request queue
         requestQueueHelper.getInstance(context).addToRequestQueue(strReq, cancel_req_tag);
     }
+
+    //return true
+    public static boolean isTrue(boolean b){
+        return b;
+    }
 }

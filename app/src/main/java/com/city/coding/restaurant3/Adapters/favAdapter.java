@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -76,7 +77,11 @@ public class favAdapter extends RecyclerView.Adapter<favAdapter.viewHolder> {
         v.desc.setText("a morning breakFast spicially for you ...");
         v.newPrice.setText(voucher.getValue()+"");
         v.quantity.setText(voucher.getQty() + " Left");
-        v.view.setOnClickListener(new View.OnClickListener() {
+
+
+
+    //set frame clickListener to listen for any click any where on fav item
+        v.frameLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // pairs = new Pair[9] ;
@@ -89,9 +94,6 @@ public class favAdapter extends RecyclerView.Adapter<favAdapter.viewHolder> {
                 mContext.startActivity(intent);
             }
         });
-
-
-
 
 
     }//end binding method
@@ -116,8 +118,9 @@ public class favAdapter extends RecyclerView.Adapter<favAdapter.viewHolder> {
         //set id's for voucher item fields
         ImageView voucherImage;
         TextView title , desc , newPrice ,quantity;
-        TextView view ,branch ,discount;
+        TextView branch ,discount;
         ScaleRatingBar rate ;
+        FrameLayout frameLayout ;
 
 
         // ConstraintLayout itemLayout;
@@ -134,8 +137,7 @@ public class favAdapter extends RecyclerView.Adapter<favAdapter.viewHolder> {
             newPrice = itemView.findViewById(R.id.voucher_new_price_id);
             branch = itemView.findViewById(R.id.branch_id);
             quantity = itemView.findViewById(R.id.voucher_quantity_id);
-            view = itemView.findViewById(R.id.voucher_view_id);
-
+            frameLayout = itemView.findViewById(R.id.fav_item_frame_id);
 
              /*
             pairs[0] = new Pair<View,String>(voucherImage,"vImage");

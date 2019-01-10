@@ -8,59 +8,79 @@
     android:layout_margin="10dp"
     android:paddingBottom="8dp"
     android:layoutDirection="ltr">
-    <!--store title view-->
-    <TextView
-        android:id="@+id/store_name_id"
-        style="@style/voucher_title_style"
+
+    <FrameLayout
+        android:id="@+id/store_item_frame_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Honeydew Restaurant Sdn Bhd"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/location_id"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <!--store title view-->
+            <TextView
+                android:id="@+id/store_name_id"
+                style="@style/voucher_title_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Honeydew Restaurant Sdn Bhd"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/location_id"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
 
-    <!--end-->
+            <!--end-->
 
-    <!--store add view-->
-    <TextView
-        android:id="@+id/store_add_id"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:ellipsize="end"
-        android:maxLength="120"
-        android:maxLines="2"
-        android:text="2nd Floor, No.1, Wang Plaza \r\nJalan Tun Perak \r\n75300 Melaka"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/location_id"
-        app:layout_constraintTop_toBottomOf="@+id/store_name_id"
-        app:layout_constraintVertical_bias="0.0" />
-    <!--end-->
+            <!--store add view-->
+            <TextView
+                android:id="@+id/store_add_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:ellipsize="end"
+                android:maxLength="120"
+                android:maxLines="2"
+                android:text="2nd Floor, No.1, Wang Plaza \r\nJalan Tun Perak \r\n75300 Melaka"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/location_id"
+                app:layout_constraintTop_toBottomOf="@+id/store_name_id"
+                app:layout_constraintVertical_bias="0.0" />
+            <!--end-->
 
-    <!--get location imageView-->
-    <ImageView
-        android:id="@+id/location_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
-        android:padding="15dp"
-        android:src="@drawable/store_location_icon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-    <!--end-->
+            <!--get location imageView-->
+            <ImageView
+                android:id="@+id/location_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:padding="15dp"
+                android:src="@drawable/store_location_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+            <!--end-->
+        </android.support.constraint.ConstraintLayout>
+
+    </FrameLayout>
 </android.support.constraint.ConstraintLayout>

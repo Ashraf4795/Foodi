@@ -54,7 +54,7 @@ import spencerstudios.com.bungeelib.Bungee;
 
 public class homeActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<ArrayList<voucherData>> {
     private String TAG = "homeActivity";
-    private static boolean isOwner = true;
+    private static boolean isOwner ;
     private static final int CAMERA_PERMISSION_CODE = 100;
     private static final int PERMISSION_REQUEST = 200;
     private static final String PERMISSION_TITLE = "Camera for scanning";
@@ -71,7 +71,7 @@ public class homeActivity extends AppCompatActivity implements LoaderManager.Loa
     private RecyclerView recyclerView;
     private homeRecycleViewAdapter adapter;
     private MaterialSearchView searchView;
-    private static final String URL = "http://honeydewpos.com/loycher/api/voucher_list.php?user_id=";
+    private static final String USER_URL = "http://honeydewpos.com/loycher/api/voucher_list.php?user_id=";
     private Intent intent;
     String userId;
 
@@ -89,6 +89,7 @@ public class homeActivity extends AppCompatActivity implements LoaderManager.Loa
         userId = intent.getStringExtra("user_id");
         name = intent.getStringExtra("name");
         email = intent.getStringExtra("email");
+        isOwner = intent.getBooleanExtra("ownerState",false);
         Log.e(TAG, "onCreate: " + "user id =" + userId);
         //showToastMessWithUserId(userId);
 
@@ -149,8 +150,8 @@ public class homeActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public android.content.Loader<ArrayList<voucherData>> onCreateLoader(int id, Bundle args) {
-        Log.e(TAG, "onCreateLoader: make connection to " + URL + userId);
-        return new voucherLoader(homeActivity.this, URL + userId);
+        Log.e(TAG, "onCreateLoader: make connection to " + USER_URL + userId);
+        return new voucherLoader(homeActivity.this, USER_URL + userId);
 
     }
 
@@ -203,6 +204,8 @@ public class homeActivity extends AppCompatActivity implements LoaderManager.Loa
             return super.onCreateOptionsMenu(menu);
         } else {
             inflater.inflate(R.menu.client_menu, menu);
+            MenuItem item = menu.findItem(R.id.search);
+            searchView.setMenuItem(item);
             return super.onCreateOptionsMenu(menu);
         }
     }//end

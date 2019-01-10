@@ -68,7 +68,7 @@
     <TextView
         android:id="@+id/error_message_login_id"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="18dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
@@ -77,8 +77,9 @@
         android:textColor="@color/theme_primary"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_id" />
+        app:layout_constraintTop_toBottomOf="@+id/owner_id" />
     <!--end-->
 
     <!--login btn-->
@@ -91,9 +92,10 @@
         android:layout_marginEnd="32dp"
         android:background="@color/theme_primary"
         android:text="@string/login"
-        android:textStyle="bold"
         android:textColor="@color/master_red"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/error_message_login_id" />
     <!--end-->
@@ -121,27 +123,25 @@
 
 
     <!--sign in with another email-->
-    <LinearLayout
-        android:id="@+id/gft_signEmail_id"
+
+    <CheckBox
+        android:id="@+id/owner_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="64dp"
-        android:orientation="vertical"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/theme_primary"
+        android:textSize="16sp"
+        android:text="@string/owner_check_box"
+        android:textStyle="bold"
+        android:checked="false"
+        android:padding="10dp"
+        android:buttonTint="@color/theme_primary"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signUp_id">
-
-        <!--google btn-->
-       <!--<com.google.android.gms.common.SignInButton
-            android:id="@+id/google_signin_id"
-            android:layout_width="148dp"
-            android:layout_height="wrap_content" />-->
-
-        <!--signIn facebook-->
-
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/password_id" />
     <!--end-->
 
 
