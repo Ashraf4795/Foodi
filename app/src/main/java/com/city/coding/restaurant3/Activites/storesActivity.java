@@ -1,6 +1,7 @@
 package com.city.coding.restaurant3.Activites;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.Loader;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;

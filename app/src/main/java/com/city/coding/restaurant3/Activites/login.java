@@ -117,7 +117,7 @@ public class login extends AppCompatActivity {
                         if (isOwnerChecked) {
                             loginOwner(email,password,isOwnerChecked);
                         } else {
-                            loginUser(email, password);
+                            loginUser(email, password,isOwnerChecked);
                         }
                     } else {
                         Log.e(TAG, "onClick: "+" emial from signup is empty" );
@@ -125,7 +125,7 @@ public class login extends AppCompatActivity {
                             Log.e(TAG, "onClick: "+" is owner " );
                             loginOwner(email,password,isOwnerChecked);
                         } else {
-                            loginUser(email, password);
+                            loginUser(email, password,isOwnerChecked);
                         }
 
                     }
@@ -173,7 +173,7 @@ public class login extends AppCompatActivity {
     }
 
     //get user authentication
-    private void loginUser(final String email, final String password) {
+    private void loginUser(final String email, final String password , final boolean isOwner) {
         final String EMAIL = "email=";
         final String PASS = "&pass=";
 
@@ -205,7 +205,7 @@ public class login extends AppCompatActivity {
                     if (!result.equals("Not Exist")) {
                         //save user information in sharedPreference
                         //for future purposes
-                        saveUserLoginInfo(email, password);
+                        saveUserLoginInfo(email, password, name,isOwner);
 
                         //show user id
                         //Toast.makeText(login.this, result, Toast.LENGTH_LONG).show();
@@ -286,7 +286,7 @@ public class login extends AppCompatActivity {
                     if (!result.equals("Not Exist")) {
                         //save user information in sharedPreference
                         //for future purposes
-                        saveUserLoginInfo(email, password,isOwner);
+                        saveUserLoginInfo(email, password,name,isOwner);
 
                         //show user id
                         //Toast.makeText(login.this, result, Toast.LENGTH_LONG).show();
@@ -348,26 +348,18 @@ public class login extends AppCompatActivity {
 
 
     //save user information for future purposes
-    protected void saveUserLoginInfo(String email, String password) {
+    protected void saveUserLoginInfo(String email, String password,String name , boolean isOwner) {
         SharedPreferences sp = getSharedPreferences("Login", MODE_PRIVATE);
         SharedPreferences.Editor Ed = sp.edit();
         Ed.putString("Unm", email);
         Ed.putString("Psw", password);
         Ed.putString("user_id", user_id);
-
+        Ed.putString("name",name);
+        Ed.putBoolean("isOwner",isOwner);
         Ed.apply();
     }
 
-    //save user information for future purposes
-    protected void saveUserLoginInfo(String email, String password , boolean isOwner) {
-        SharedPreferences sp = getSharedPreferences("loginOwner", MODE_PRIVATE);
-        SharedPreferences.Editor Ed = sp.edit();
-        Ed.putString("Unm", email);
-        Ed.putString("Psw", password);
-        Ed.putString("user_id", user_id);
-        Ed.putBoolean("ownerState",isOwner);
-        Ed.apply();
-    }
+
 
     //check if login input valid or not
     private boolean isValidInput(String email, String pass) {

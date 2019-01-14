@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -68,12 +69,15 @@ public class homeActivity extends AppCompatActivity implements LoaderManager.Loa
     private ProgressBar progressBar;
     LoaderManager loaderManager = getLoaderManager();
     private String name, email;
+    private String sharedName,sharedEmail ;
     private RecyclerView recyclerView;
     private homeRecycleViewAdapter adapter;
     private MaterialSearchView searchView;
     private static final String USER_URL = "http://honeydewpos.com/loycher/api/voucher_list.php?user_id=";
     private Intent intent;
     String userId;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +89,10 @@ public class homeActivity extends AppCompatActivity implements LoaderManager.Loa
         searchView = findViewById(R.id.search_view);
         voucherList = new ArrayList<>();
         //get userId , sent by loginActivity
+
+
+        //get name and email that saved from login activity
+        getSharedNameAndEmail();
         intent = getIntent();
         userId = intent.getStringExtra("user_id");
         name = intent.getStringExtra("name");
@@ -348,7 +356,7 @@ public class homeActivity extends AppCompatActivity implements LoaderManager.Loa
                         new DividerDrawerItem(),
                         logout
 
-                ).withAccountHeader(createDrawerProfileHeader(this.name, this.email))
+                ).withAccountHeader(createDrawerProfileHeader(this.sharedName, this.sharedEmail))
 
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -379,20 +387,18 @@ public class homeActivity extends AppCompatActivity implements LoaderManager.Loa
                             case 6:
                                 Intent storesIntent = new Intent(homeActivity.this, storesActivity.class);
                                 startActivity(storesIntent);
-                                finish();
                                 // Toast.makeText(homeActivity.this, "Stores", Toast.LENGTH_LONG).show();
                                 break;
                             case 8:
                                 Intent tcIntent = new Intent(homeActivity.this, term_condition.class);
                                 startActivity(tcIntent);
-                                finish();
+
                                 // Toast.makeText(homeActivity.this, "term and condition", Toast.LENGTH_LONG).show();
                                 break;
                             case 10:
                                 removeDataFromPreference();
                                 Intent logoutIntent = new Intent(homeActivity.this, splash.class);
                                 startActivity(logoutIntent);
-                                finish();
                                 // Toast.makeText(homeActivity.this, "term and condition", Toast.LENGTH_LONG).show();
                                 break;
 
@@ -454,6 +460,14 @@ public class homeActivity extends AppCompatActivity implements LoaderManager.Loa
             adapter.filteredList(filteredList);
         
             //Toast.makeText(homeActivity.this,"adapter is null ",Toast.LENGTH_LONG).show();
+    }
+
+    private void getSharedNameAndEmail(){
+        SharedPreferences sp = getSharedPreferences("Login",MODE_PRIVATE);
+        if(sp != null){
+            sharedName = sp.getString("name","No Name");
+            sharedEmail = sp.getString("Unm","No Email");
+        }
     }
 
 }
