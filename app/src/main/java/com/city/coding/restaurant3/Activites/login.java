@@ -1,13 +1,11 @@
 package com.city.coding.restaurant3.Activites;
 
-import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,7 +23,6 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.city.coding.restaurant3.Helper.Helper;
 import com.city.coding.restaurant3.Helper.requestQueueHelper;
 import com.city.coding.restaurant3.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -60,7 +57,7 @@ public class login extends AppCompatActivity {
     private TextView errorMessage;
     private SignInButton googleSignIn;
     private CheckBox OwnerCheckBox;
-    private String name, email;
+    private String name , phone, dateOfBirth;
     private boolean isOwnerChecked;
     //google integration var
     private GoogleSignInOptions signInOptions;
@@ -140,7 +137,7 @@ public class login extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    alertDialog("Hmmm","Are you the Boss ? ","Yes","No");
+                    alertDialog("Hmmm","Are you the Boss ? ","Yes","No",buttonView);
                 }
             }
         });
@@ -200,12 +197,13 @@ public class login extends AppCompatActivity {
                     String result = userData.getString("user_id");
                     user_id = result;
                     name = userData.getString("first_name");
-                    name = name + " " + userData.getString("last_name");
+                    phone = userData.getString("phone_no");
+                    dateOfBirth = userData.getString("date_of_birth");
                     Log.e(TAG, result);
                     if (!result.equals("Not Exist")) {
                         //save user information in sharedPreference
                         //for future purposes
-                        saveUserLoginInfo(email, password, name,isOwner);
+                        saveUserLoginInfo(email, password, name,dateOfBirth,phone,isOwner);
 
                         //show user id
                         //Toast.makeText(login.this, result, Toast.LENGTH_LONG).show();
@@ -281,12 +279,13 @@ public class login extends AppCompatActivity {
                     String result = userData.getString("owner_id");
                     owner_id = result;
                     name = userData.getString("first_name");
-                    name = name + " " + userData.getString("last_name");
+                    phone = userData.getString("phone_no");
+                    dateOfBirth = userData.getString("date_of_birth");
                     Log.e(TAG, result);
                     if (!result.equals("Not Exist")) {
                         //save user information in sharedPreference
                         //for future purposes
-                        saveUserLoginInfo(email, password,name,isOwner);
+                        saveUserLoginInfo(email, password,name,dateOfBirth,phone,isOwner);
 
                         //show user id
                         //Toast.makeText(login.this, result, Toast.LENGTH_LONG).show();
@@ -348,13 +347,15 @@ public class login extends AppCompatActivity {
 
 
     //save user information for future purposes
-    protected void saveUserLoginInfo(String email, String password,String name , boolean isOwner) {
+    protected void saveUserLoginInfo(String email, String password,String name, String dateOfBirth,String phone , boolean isOwner) {
         SharedPreferences sp = getSharedPreferences("Login", MODE_PRIVATE);
         SharedPreferences.Editor Ed = sp.edit();
         Ed.putString("Unm", email);
         Ed.putString("Psw", password);
         Ed.putString("user_id", user_id);
         Ed.putString("name",name);
+        Ed.putString("birth_of_date", dateOfBirth);
+        Ed.putString("phone", phone);
         Ed.putBoolean("isOwner",isOwner);
         Ed.apply();
     }
@@ -431,7 +432,7 @@ public class login extends AppCompatActivity {
     }
 
     //show alert dialog
-    private void alertDialog(String title,String message,String pos,String neg){
+    private void alertDialog(String title, String message, String pos, String neg , final CompoundButton ownerStatus){
 
         new AlertDialog.Builder(this)
                 .setTitle(title)
@@ -445,6 +446,8 @@ public class login extends AppCompatActivity {
                 .setNegativeButton(neg, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        OwnerCheckBox.setChecked(false);
+                        ownerStatus.setChecked(false);
                         Toast.makeText(login.this, "welcome", Toast.LENGTH_SHORT).show();
                     }
                 })

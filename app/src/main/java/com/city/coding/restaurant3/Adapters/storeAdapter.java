@@ -2,6 +2,7 @@ package com.city.coding.restaurant3.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -47,6 +48,7 @@ public class storeAdapter extends RecyclerView.Adapter<storeAdapter.sViewHolder>
         holder.frameLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(mContext, MapsActivity.class);
                 intent.putExtra("lati", s.getLati());
                 intent.putExtra("longi", s.getLongi());
@@ -54,6 +56,8 @@ public class storeAdapter extends RecyclerView.Adapter<storeAdapter.sViewHolder>
                 mContext.startActivity(intent);
             }
         });
+
+
 
     }
 

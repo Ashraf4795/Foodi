@@ -55,7 +55,7 @@ import spencerstudios.com.bungeelib.Bungee;
 
 public class homeActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<ArrayList<voucherData>> {
     private String TAG = "homeActivity";
-    private static boolean isOwner ;
+    private static boolean isOwner;
     private static final int CAMERA_PERMISSION_CODE = 100;
     private static final int PERMISSION_REQUEST = 200;
     private static final String PERMISSION_TITLE = "Camera for scanning";
@@ -69,14 +69,13 @@ public class homeActivity extends AppCompatActivity implements LoaderManager.Loa
     private ProgressBar progressBar;
     LoaderManager loaderManager = getLoaderManager();
     private String name, email;
-    private String sharedName,sharedEmail ;
+    private String sharedName, sharedEmail;
     private RecyclerView recyclerView;
     private homeRecycleViewAdapter adapter;
     private MaterialSearchView searchView;
     private static final String USER_URL = "http://honeydewpos.com/loycher/api/voucher_list.php?user_id=";
     private Intent intent;
     String userId;
-
 
 
     @Override
@@ -97,7 +96,7 @@ public class homeActivity extends AppCompatActivity implements LoaderManager.Loa
         userId = intent.getStringExtra("user_id");
         name = intent.getStringExtra("name");
         email = intent.getStringExtra("email");
-        isOwner = intent.getBooleanExtra("ownerState",false);
+        isOwner = intent.getBooleanExtra("ownerState", false);
         Log.e(TAG, "onCreate: " + "user id =" + userId);
         //showToastMessWithUserId(userId);
 
@@ -399,6 +398,7 @@ public class homeActivity extends AppCompatActivity implements LoaderManager.Loa
                                 removeDataFromPreference();
                                 Intent logoutIntent = new Intent(homeActivity.this, splash.class);
                                 startActivity(logoutIntent);
+                                finish();
                                 // Toast.makeText(homeActivity.this, "term and condition", Toast.LENGTH_LONG).show();
                                 break;
 
@@ -406,6 +406,7 @@ public class homeActivity extends AppCompatActivity implements LoaderManager.Loa
                         return true;
                     }
                 }).withDrawerGravity(Gravity.START)
+                .withCloseOnClick(true)
                 .build();
     }
 
@@ -458,15 +459,15 @@ public class homeActivity extends AppCompatActivity implements LoaderManager.Loa
         }
         if (adapter != null)
             adapter.filteredList(filteredList);
-        
-            //Toast.makeText(homeActivity.this,"adapter is null ",Toast.LENGTH_LONG).show();
+
+        //Toast.makeText(homeActivity.this,"adapter is null ",Toast.LENGTH_LONG).show();
     }
 
-    private void getSharedNameAndEmail(){
-        SharedPreferences sp = getSharedPreferences("Login",MODE_PRIVATE);
-        if(sp != null){
-            sharedName = sp.getString("name","No Name");
-            sharedEmail = sp.getString("Unm","No Email");
+    private void getSharedNameAndEmail() {
+        SharedPreferences sp = getSharedPreferences("Login", MODE_PRIVATE);
+        if (sp != null) {
+            sharedName = sp.getString("name", "No Name");
+            sharedEmail = sp.getString("Unm", "No Email");
         }
     }
 
